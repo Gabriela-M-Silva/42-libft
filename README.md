@@ -1,3 +1,3 @@
-# libft-42
+# Libft
 
 Uma biblioteca com minhas próprias funções.
