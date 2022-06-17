@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 07:23:02 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/06/11 06:18:41 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/06/17 02:24:42 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,9 @@ void	*ft_calloc(size_t num, size_t size)
 	size_t	result;
 
 	result = num * size;
-	if (num == 0 || size == 0 || result < 0)
-		return (NULL);
 	if (size != 0 && result / size != num)
+		return (NULL);
+	if (num == 0 || size == 0)
 		return (NULL);
 	arr = (void *)malloc(result);
 	if (!arr)

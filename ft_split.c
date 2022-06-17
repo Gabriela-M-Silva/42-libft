@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 07:35:59 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/06/13 07:22:48 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/06/17 02:25:13 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,11 +45,8 @@ static size_t	ft_size_word(const char *s, char c)
 
 static void	*ft_free_mat(char **tab, size_t limit)
 {
-	size_t	counter;
-
-	counter = 0;
-	while (counter < limit)
-		free(tab[counter]);
+	while (limit--)
+		free(tab[limit]);
 	free(tab);
 	return (NULL);
 }
