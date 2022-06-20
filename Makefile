@@ -6,7 +6,7 @@
 #    By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/06/01 00:34:50 by gde-mora          #+#    #+#              #
-#    Updated: 2022/06/17 02:24:11 by gde-mora         ###   ########.fr        #
+#    Updated: 2022/06/20 07:02:07 by gde-mora         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,14 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen
 	ft_substr.c ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+SRC_BONUS =  ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+	ft_lstclear.c ft_lstiter.c ft_lstmap.c
+
 NAME = libft.a
 
 OBJS = $(SRC:.c=.o)
+
+OBJS_BONUS = $(SRC_BONUS:.c=.o)
 
 HEADER = libft.h
 
@@ -26,22 +31,25 @@ RM = rm -f
 
 CC = cc
 
-CFLAGS = -Wall -Wextra -Werror
+CCFLAGS = -Wall -Wextra -Werror
 
 all: $(NAME)
 
 .c.o:
-	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
+	$(CC) $(CCFLAGS) -c $< -o $(<:.c=.o) 
 
 $(NAME): $(OBJS) $(HEADER)
 	ar -rcs $(NAME) $(OBJS) $(HEADER)
 
+bonus: ${OBJS_BONUS} ${HEADER}
+	ar -rsc ${NAME} ${OBJS_BONUS} ${HEADER}
+
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) ${OBJS_BONUS}
 
 fclean: clean
 	$(RM) $(NAME)
 
 re: fclean all
 
-.PHONY: all clean fclean re
+.PHONY: all clean fclean re bonus
