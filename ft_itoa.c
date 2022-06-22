@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/03 07:32:21 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/06/12 14:51:29 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/06/22 04:18:54 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ unsigned int	ft_test_negative(int n)
 	return (0);
 }
 
-unsigned int	ft_counter(int n)
+unsigned int	ft_counter_digits(int n)
 {
 	unsigned int	counter;
 
@@ -45,7 +45,7 @@ char	*ft_itoa(int n)
 	is_negative = ft_test_negative(n);
 	if (is_negative == 1)
 		n *= -1;
-	i = ft_counter(n) + is_negative;
+	i = ft_counter_digits(n) + is_negative;
 	str = (char *)malloc(sizeof(char) * (i + 1));
 	if (!str)
 		return (NULL);

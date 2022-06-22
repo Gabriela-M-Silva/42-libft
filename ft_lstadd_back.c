@@ -6,7 +6,7 @@
 /*   By: gde-mora <gde-mora@student.42sp.org.br>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/18 03:40:25 by gde-mora          #+#    #+#             */
-/*   Updated: 2022/06/18 04:21:58 by gde-mora         ###   ########.fr       */
+/*   Updated: 2022/06/22 04:19:47 by gde-mora         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 {
 	t_list	*aux_lst;
 
-	if (*lst == NULL)
+	if (!*lst)
 		*lst = new;
 	else
 	{
